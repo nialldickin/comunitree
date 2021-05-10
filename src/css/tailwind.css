@@ -1,0 +1,62 @@
+@import 'tailwindcss/base';
+
+@import 'tailwindcss/components';
+@import './navbar.css';
+@import './gardenlist.css';
+@import './search.css';
+@import './autosuggest.css';
+@import './forms.css';
+
+@import 'tailwindcss/utilities';
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@layer components {
+
+  .select {
+    appearance: none;
+    background: url('http://localhost:8080/images/dropdown.svg') no-repeat right;
+  }
+
+  .select.gray-arrow {
+    background: url('http://localhost:8080/images/dropdown-gray.svg') no-repeat right;
+  }
+
+  .select.green-arrow {
+    background: url('http://localhost:8080/images/dropdown-green.svg') no-repeat right;
+  }
+
+  .home-page__container {
+      @apply w-full pt-20 mx-auto space-y-8;
+      max-width: 1180px;
+  }
+
+  .secondary-panel__2 {
+      background-image: url('https://source.unsplash.com/71uUjIt3cIs/600x600');
+      background-position: 50% 40%;
+  }
+
+ .secondary-panel__1 {
+      background-image: url('https://source.unsplash.com/vdD1rcsdL3E/600x600');
+      background-position: 50% 40%;
+  }
+
+  .secondary-panel {
+    @apply rounded-2xl flex-1 p-4 shadow-lg mx-auto bg-no-repeat bg-cover;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    @apply font-light;
+  }
+
+  input[type='search']:focus {
+    box-shadow: none;
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+}

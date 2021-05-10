@@ -1,0 +1,107 @@
+scalar Upload
+
+enum SortOrder {
+  NEWEST
+  OLDEST
+  CLOSEST
+  FURTHEST
+}
+
+enum GardenSize {
+  SMALL
+  MEDIUM
+  LARGE
+}
+
+type UploadResponse {
+  newFilename: String!
+  originalFilename: String!
+}
+
+type File {
+  filename: String!
+}
+
+input FileInput {
+  filename: String!
+}
+
+type Location {
+  latitude: Float!
+  longitude: Float!
+  # address: String! this isn't needed till the geocoding api is integrated
+}
+
+input LocationInput {
+  latitude: Float!
+  longitude: Float!
+  # address: String! this isn't needed till the geocoding api is integrated
+}
+
+type Owner {
+  firstName: String!
+  lastName: String!
+  username: String!
+}
+
+type User {
+  firstName: String!
+  lastName: String!
+  emailAddress: String!
+  password: String!
+}
+
+input OwnerInput {
+  firstName: String!
+  lastName: String!
+  username: String!
+}
+
+type Garden {
+  _id: ID!
+  owner: Owner!
+  description: String!
+  photos: [File!]!
+  location: Location!
+}
+
+type GardenList {
+  gardens: [Garden!]!
+  count: Int!
+}
+
+type AddressPrediction {
+  description: String!
+  place_id: String!
+}
+
+type Viewer {
+  convertPlaceToCoordinates(placeId: String!): Location!
+  getGeocodedLocation(address: String!): [AddressPrediction!]!
+  getGarden(id: ID!): Garden
+  getGardens(first: Int!, after: Int!, sortEnum: SortOrder!, location: LocationInput, searchDistance: Float): GardenList!
+}
+
+type Query {
+  viewer: Viewer!
+}
+
+input GardenInput {
+  owner: OwnerInput!
+  description: String!
+  photos: [FileInput!]!
+  location: LocationInput!
+}
+
+input UserInput {
+  firstName: String!
+  lastName: String!
+  emailAddress: String!
+  password: String!
+}
+
+type Mutation {
+  singleUpload(file: Upload!): UploadResponse!
+  createGarden(garden: GardenInput!): Boolean!
+  createUser(user: UserInput!): String!
+}

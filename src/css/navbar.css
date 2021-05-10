@@ -1,0 +1,24 @@
+.navbar {
+  @apply w-full z-50 fixed top-0 left-0 bg-pastel-green;
+}
+
+.navbar-body {
+  @apply flex mx-auto items-center py-3 text-white;
+  max-width: 1180px;
+}
+
+.navbar-hero {
+  @apply flex items-center justify-self-start;
+}
+
+.navbar-hero__icon {
+  @apply h-12 w-12;
+}
+
+.navbar-hero__text {
+  @apply tracking-tight font-semibold text-4xl;
+}
+
+.navbar-links {
+  @apply flex justify-end text-lg pl-12;
+}

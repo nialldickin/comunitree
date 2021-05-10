@@ -1,0 +1,19 @@
+.validated-input:last-child {
+    @apply mb-0;
+}
+
+.validated-input {
+    @apply border-2 mb-2 p-2 w-3/4 rounded-md text-gray-800 bg-gray-50 border-gray-300 outline-none focus:bg-white focus:border-blue-600 duration-100 ease-in;
+}
+
+.validated-input:not(:placeholder-shown):invalid {
+    @apply border-red-600;
+}
+
+.validated-input:not(:placeholder-shown):not(:focus):valid {
+    @apply border-pastel-green;
+}
+
+.valid-div:not(:focus-within) {
+    @apply border-pastel-green;
+}

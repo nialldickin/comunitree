@@ -1,0 +1,3 @@
+.gardenlist-grid {
+    @apply relative grid grid-cols-4 w-full gap-6 my-3;
+}

@@ -1,0 +1,9 @@
+.search-page__container {
+    @apply mx-auto pt-16 h-full flex flex-auto flex-col items-center;
+    max-width: 1180px;
+}
+
+.search-button__load-more {
+    @apply bg-pastel-green text-white rounded-md px-4 py-2 my-2 transition duration-500 select-none hover:text-black focus:outline-none mb-4;
+    width: fit-content;
+}

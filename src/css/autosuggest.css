@@ -1,0 +1,30 @@
+.react-autosuggest__suggestions-container {
+    position: absolute;
+}
+
+.react-autosuggest__input--focused {
+    outline: none;
+}
+
+.react-autosuggest__input {
+    width: 100%;
+}
+
+/* TODO: FIX SUPER HACKY POSITIONING & WIDTH */
+.react-autosuggest__suggestions-list {
+    position: relative;
+    left: -1rem;
+    top: 12px;
+    @apply divide-y divide-gray-400 rounded-lg bg-white p-2 shadow-xl;
+    width: 30vw;
+}
+
+.react-autosuggest__suggestion {
+    @apply p-2;
+    color: black;
+    cursor: pointer;
+}
+
+.react-autosuggest__suggestion--highlighted {
+    @apply bg-gray-300;
+}

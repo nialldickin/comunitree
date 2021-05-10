@@ -1,0 +1,11 @@
+node_modules
+build
+yarn.lock
+yarn-error.log
+package-lock.json
+src/css/main.css
+.DS_Store
+.vscode
+.eslintcache
+**/__generated__/**
+comunitree.code-workspace
